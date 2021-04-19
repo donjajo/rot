@@ -5,6 +5,7 @@ CFLAGS		= -Wall
 # BINS		:= $(SRC:%.c=%.o)
 BUILDDIR	= build/
 SHELL		= /bin/bash
+DESTDIR		= /usr/local/bin
 
 ifneq ($(DEBUG),)
 	CFLAGS := $(CFLAGS) -g
@@ -24,3 +25,6 @@ $(PROG): # $(BINS)
 clean:
 	git clean -Xfq
 	rm -rf build/$(PROG)
+
+install:
+	cp $(BUILDDIR)$(PROG) $(DESTDIR)/
