@@ -1,3 +1,11 @@
+/**
+ * rot.c - rotate strings
+ * 
+ *  (C) 2021	James John <me@donjajo.com>
+ * 
+ * License: GPL3
+ * 
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <wchar.h>

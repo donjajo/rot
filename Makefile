@@ -5,10 +5,13 @@ CFLAGS		= -Wall
 # BINS		:= $(SRC:%.c=%.o)
 BUILDDIR	= build/
 SHELL		= /bin/bash
-DESTDIR		= /usr/local/bin
 
 ifneq ($(DEBUG),)
 	CFLAGS := $(CFLAGS) -g
+endif
+
+ifeq ($(DESTDIR),)
+	DESTDIR := /usr/local/bin/
 endif
 
 .PHONY: clean
