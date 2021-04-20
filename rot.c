@@ -158,6 +158,18 @@ void print_r(size_t n, wchar_t **ret, wchar_t *delim)
 	}
 }
 
+void destroy_split(size_t n, wchar_t **buf)
+{
+	if (n) {
+		while (n--) {
+			if (buf[n])
+				free(buf[n]);
+		}
+
+		free(buf);
+	}
+}
+
 struct opts {
 	int n;			// Number of rotations
 	wchar_t	*delim;		// Delimiter of strings
@@ -242,6 +254,8 @@ PRINT:
 			} else {
 				print_r(ret_count, split_buf, opts.delim);
 			}
+
+			destroy_split(ret_count, split_buf);
 		} else {
 			if (opts.rn != (size_t) -1 && opts.rn < len)
 				fputwc(buf[opts.rn], stdout);
@@ -251,5 +265,8 @@ PRINT:
 
 		if (has_newline) fprintf(stdout, "\n");
 		fflush(stdout);
+
+		if (opts.delim_n)
+			free(opts.delim);
 	}
 }
