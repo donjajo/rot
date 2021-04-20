@@ -3,10 +3,11 @@ Rotate single or group of characters n number of times
 
 ## Installation
 Run `make` to build. Binary file will be dumped in `build/rot` path.
+
 To install to your environment, run `sudo make install`
 
 ## Usage
-`rot` can be used in different ways and different scenarios. Thanks to (Ibe) [https://twitter.com/Ibesoft11] for this use case:
+`rot` can be used in different ways and different scenarios. Thanks to [Ibe](https://twitter.com/Ibesoft11) for this use case:
 
 - Find what it will be in next 20 days, starting from Tuesday
 ```sh
